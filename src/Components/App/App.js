@@ -5,7 +5,6 @@ import Form from "../Form";
 import Filter from "../Filter";
 import ContactsList from "../ContactsList";
 
-const storage = JSON.parse(localStorage.getItem("data"));
 // console.log(storage);
 class App extends Component {
   state = {
@@ -19,6 +18,8 @@ class App extends Component {
   };
 
   componentDidMount() {
+    const storage = JSON.parse(localStorage.getItem("data"));
+
     if (storage) {
       this.setState({ contacts: storage });
     }
